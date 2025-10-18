@@ -14,37 +14,50 @@
 #include <vector>
 #include <cstring>
 
+// Header Files
+#include "functions.h"
+
 using namespace std;
 
- // this array is the size of bolded letters 
- // 26 rows and 8 columns ( 8x8 letters)
+// Define variables
 const int rows = 26;    // 26 letters in the alphabet
 const int columns = 8;  // the width of the letters is 8 bits
 
-// Convert an 8-bit hex value into a null-terminated binary string (length 8)
-// Returns an std::string for convenience but also fills the provided char buffer.
-string hexToBinarString(int hexValue)
-{
-    string binary = "";
-    
-    for (int i = 0; i < 8; ++i)
-    {
-        int bit = hexValue % 2;
-        hexValue /= 2;
 
-        // Append to front because bits are being read in reverse
-        if (bit == 1){
-            binary += '1';
+// Convert a 2D array of hex values (26 letters x 8 columns) into
+// a vector where each letter is represented by 8 strings of 8 bits.
+// Example: result[0][3] is the 4th row (string of 8 chars) of letter A.
+vector<vector<string>> hexToBinaryString(const int alphabet[][columns])
+{
+    vector<vector<string>> binaryArray;
+
+    for (int i = 0; i < rows; ++i) {
+        vector<string> letterRows;
+
+        for (int j = 0; j < columns; ++j) {
+            unsigned int value = static_cast<unsigned int>(alphabet[i][j]) & 0xFFu;
+            string bits = "";
+
+            // build 8-bit string from MSB to LSB
+            for (int b = 7; b >= 0; --b) {
+                if ( (value >> b) & 1u ) bits += '1';
+                else bits += '0';
+            }
+
+            letterRows.push_back(bits);
         }
-        else{
-            binary += '0';
-        }
+
+        binaryArray.push_back(letterRows);
     }
-    return binary;
+
+    return binaryArray;
 }
 
 int main()
 {
+    ofstream out;
+    out.open("test_ana.txt");
+
     const int BoldAlphabet[rows][columns] = {   // don't know if we have to make it a pointer
         // Bold A
         { 0x3C, 0x66, 0xC3, 0xC3, 0xFF, 0xFF, 0xC3, 0xC3 },
@@ -100,11 +113,22 @@ int main()
         { 0xFF, 0xFF, 0x07, 0x0E, 0x38, 0xE0, 0xFF, 0xFF }
     };
 
-    // (hexToBinarString is defined above)
+    
+    auto bin = hexToBinaryString(BoldAlphabet);
 
-    // Test to print out 11000011
-    cout << hexToBinarString(0xC3) << endl;
+    for (size_t letter = 0; letter < bin.size(); ++letter) {
+        out << "Letter " << static_cast<char>('A' + letter) << ":\n";
+        for (const auto &row : bin[letter]) {
+            out << row << '\n';
+        }
+        out << '\n';
+    }
 
+    // Uses printBinaryAlphabet in functions.h file
+    //auto bin = hexToBinaryString(BoldAlphabet);
+    //printBinaryAlphabet(out, bin);
+
+    out.close();
 
     return 0;   // End of program
 }
