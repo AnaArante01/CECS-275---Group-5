@@ -9,21 +9,24 @@
 #include <cmath>
 #include <iomanip>
 #include <fstream>
-#include <string>
+#include <string>  // Make sure this is included
 #include <vector>
 #include <cctype>
 #include <bitset>
-
 using namespace std;
 
-void Conversion_Binary(int *charData, int rows, int cols, bool isBold = false ){
+
+string Conversion_Binary(int *charData, int rows, int cols ){
 // u have to start with some sort of input 
 // take a string , run it with calculations based off of an int then convert tghat intoa string of binary values,
 // the pointers are accessing the data within the const so the data that is inputted the value inside that is what were are pointing too
 // i can only use pointers and arrays only
-
+string binaryString = "";
 // loop through each row of the character pattern
 for ( int row = 0; row < rows; row++){
+    // get the hex value at current row 
+    int hexValue = *(charData + row);
+
     // for each row eaxamine each bit from left to right (msb to lsb)
     // start from the leftmost bit (cols-2) and work down to bit 0
     for (int bit = cols -1; bit >= 0; bit--){
@@ -41,19 +44,38 @@ for ( int row = 0; row < rows; row++){
             // Example: 0x08 & (1 << 3) = 0b00001000 & 0b00001000 = 0b00001000 (true)
             //          0x08 & (1 << 2) = 0b00001000 & 0b00000100 = 0b00000000 (false)
             
-        if (*(charData + row) & (1 << bit)) {
-            // if bit is set (1) print visible number 
-            cout << (isBold ? "##" : "**");
-        } else {
-            // if bit is not set then print space for background
+        if (hexValue & (1 << bit)) {
+          binaryString += "1";
+          cout << "**";
+        } else { 
+
+            binaryString += "0";
             cout << "  ";
         }
     }
     cout << endl;
+        
+  }
+  return  binaryString;
+}
+// this function will divide the strings by rows and columns 
+void RegAlphabet (int *charData, int rows, int cols ) {
+
+    for (int row = 0; row < rows; row++){
+        int hexValue = *(charData + row);
+        for ( int bit = cols - 1; bit >= 0; bit--){
+
+        }
+
     }
+
+
 
 }
 
+void BoldAlphabet (int *charData, int rows, int cols){
+
+}
 // Function Prototypes
 void print1DArray(int* arr, int size);
 

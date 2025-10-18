@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 #include <cstring>
-#include  "lab9_functionsSuphia"
+#include  "lab9_functionsSuphia.h"
 
 using namespace std;
 
@@ -139,14 +139,19 @@ int main()
     };
 //////////////////////////////////////////////////////////////////////////////////
 // testing to display the letter 
-int* letterA = (int*)Reg_AlphData[0];
+int* letterA = (int*)Reg_AlphData[3]; // i was testing each index to see what it displays
+// still dont know how to display a whole message im leaving that for now 
 int rows = 7;
 int cols = 8;
 cout << "Displaying Letter A:" << endl;
-    Conversion_Binary(letterA, rows, cols);
+   string binary =  Conversion_Binary(letterA, rows, cols);
+   cout << binary << endl; // print binary string
     
 return 0;
-
+// now i have to use this to print out a message with user input u can use color if youd want 
+string message;
+cout << " Enter a message: " << endl;
+cin >> message;
 
 
 
