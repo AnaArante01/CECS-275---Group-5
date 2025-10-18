@@ -21,6 +21,28 @@ using namespace std;
 const int rows = 26;    // 26 letters in the alphabet
 const int columns = 8;  // the width of the letters is 8 bits
 
+// Convert an 8-bit hex value into a null-terminated binary string (length 8)
+// Returns an std::string for convenience but also fills the provided char buffer.
+string hexToBinarString(int hexValue)
+{
+    string binary = "";
+    
+    for (int i = 0; i < 8; ++i)
+    {
+        int bit = hexValue % 2;
+        hexValue /= 2;
+
+        // Append to front because bits are being read in reverse
+        if (bit == 1){
+            binary += '1';
+        }
+        else{
+            binary += '0';
+        }
+    }
+    return binary;
+}
+
 int main()
 {
     const int BoldAlphabet[rows][columns] = {   // don't know if we have to make it a pointer
@@ -78,7 +100,10 @@ int main()
         { 0xFF, 0xFF, 0x07, 0x0E, 0x38, 0xE0, 0xFF, 0xFF }
     };
 
+    // (hexToBinarString is defined above)
 
+    // Test to print out 11000011
+    cout << hexToBinarString(0xC3) << endl;
 
 
     return 0;   // End of program
