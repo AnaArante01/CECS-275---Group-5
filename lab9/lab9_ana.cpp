@@ -16,14 +16,14 @@
 
 using namespace std;
 
- //  this array is the size of regular letters 
+ // this array is the size of bolded letters 
  // 26 rows and 8 columns ( 8x8 letters)
 const int rows = 26;    // 26 letters in the alphabet
 const int columns = 8;  // the width of the letters is 8 bits
 
 int main()
 {
-    const int *BoldAlphabet[rows][columns] = {
+    const int BoldAlphabet[rows][columns] = {   // don't know if we have to make it a pointer
         // Bold A
         { 0x3C, 0x66, 0xC3, 0xC3, 0xFF, 0xFF, 0xC3, 0xC3 },
         // Bold B
@@ -77,6 +77,8 @@ int main()
         // Bold Z
         { 0xFF, 0xFF, 0x07, 0x0E, 0x38, 0xE0, 0xFF, 0xFF }
     };
+
+
 
 
     return 0;   // End of program
