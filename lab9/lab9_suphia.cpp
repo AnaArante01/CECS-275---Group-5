@@ -84,7 +84,7 @@ int main()
     { 0x3E, 0x04, 0x08, 0x10, 0x3E }
     };
 
-    const int BoldAlphabet[rows_bold][columns_bold] = {   
+    const int Bold_AlphaData[rows_bold][columns_bold] = {   
         { 0x3C, 0x66, 0xC3, 0xC3, 0xFF, 0xFF, 0xC3, 0xC3 },
         // Bold B
         { 0xFE, 0xC1, 0xFE, 0xFF, 0xFF, 0xE3, 0xC3, 0xFE },
@@ -138,40 +138,40 @@ int main()
         { 0xFF, 0xFF, 0x07, 0x0E, 0x38, 0xE0, 0xFF, 0xFF }
     };
 //////////////////////////////////////////////////////////////////////////////////
-// testing to display the letter 
-//int* letterA = (int*)BoldAlphabet[0]; // i was testing each index to see what it displays
-// still dont know how to display a whole message im leaving that for now 
-// ...existing code...
+// use switch statements for user to choose 
+
 string message;
 cout << " Enter a message: " << endl;
 cin >> message;
+int choice;
+cout << "\nHello! Choose between the following options: " << endl;
+cout << " 1. Show message in a regular font" << endl;
+cout << " 2. Show message in a bold font" << endl;
+cin >> choice;
 
+// testing to display the letter 
+//int* letterA = (int*)BoldAlphabet[0]; // i was testing each index to see what it displays
+// still dont know how to display a whole message im leaving that for now 
+// ...existing code..
 // Convert message to uppercase and filter only letters
-vector<int> letterIndices;
-for (char ch : message) {
-    ch = toupper(ch);
-    if (ch >= 'A' && ch <= 'Z') {
-        letterIndices.push_back(ch - 'A');
-    }
-}
+// run through this loop first to fill the vector with the letters side by side 
 
-// Display letters side by side
-for (int row = 0; row < 8; row++) {  // For each row of the letters
-    for (int letterIdx : letterIndices) {  // For each letter in the message
-        // Print the current row of this letter
-        for (int col = 7; col >= 0; col--) {
-            // Check if the bit at position 'col' is set (1) in the current row of the letter
-            // This uses bitwise AND to test if a specific bit position contains a 1 or 0
-            if (BoldAlphabet[letterIdx][row] & (1 << col)) {
-                cout << "*";
-            } else {
-                cout << " ";
-            }
-        }
-        cout << " ";  // Add space between letters
+switch (choice)
+{
+    case 1: // user chooses regular font
+    {
+        
+     PrintRegAlphabet((int*)Reg_AlphData, rows_reg, columns_reg, message);
+     break;
+    }  
+
+    case 2: // user chooses bold font 
+    {
+     PrintBoldAlphabet((int*)Bold_AlphaData, rows_bold, columns_bold, message);
+     break;
     }
-    cout << endl;  // New line after each row
-}
+
+    }
 }
     
 
