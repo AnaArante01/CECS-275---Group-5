@@ -23,8 +23,6 @@ void printArray(int* arr, int size){
     cout << endl;
     }
 
-
-
 /*
 * This function returns an integer in the range [lower, upper]
 * 
