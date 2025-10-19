@@ -16,14 +16,23 @@
 using namespace std;
 
 
-string Conversion_Binary(int *charData, int rows, int cols ){
+string Conversion_Binary(int *charData, int rows, int cols, string& message ){
 // u have to start with some sort of input 
 // take a string , run it with calculations based off of an int then convert tghat intoa string of binary values,
 // the pointers are accessing the data within the const so the data that is inputted the value inside that is what were are pointing too
 // i can only use pointers and arrays only
 string binaryString = "";
+for (char ch: message){
+    ch = toupper(ch); // turns all letters to uppercase since that is what were using 
+    if (ch >= 'A' && ch <= 'Z') {
+        cout << "Letter " << ch << " : " << endl;
+       
+    // always have to have an index
+    int letterIndex = ch - 'A'; // A is treated as a 1 basically 
+    int* letterData = charData + (letterIndex * rows); // points to charData
+    // dis
 // loop through each row of the character pattern
-for ( int row = 0; row < rows; row++){
+for ( int row = 0; row < 27; row++){
     // get the hex value at current row 
     int hexValue = *(charData + row);
 
@@ -57,7 +66,7 @@ for ( int row = 0; row < rows; row++){
         
   }
   return  binaryString;
-}
+}}}
 void PrintRegAlphabet (int *charData, int rows, int cols, string& message ) {
 // i want it to read the users input message and display it using our letters in regular 
 // when user inputs a message it will first loop through the characters through the message 
@@ -67,12 +76,13 @@ for (char ch: message){
         cout << "Letter " << ch << " : " << endl;
     
     // always have to have an index
-    int letterIndex = ch - 'A';
+    int letterIndex = ch - 'A'; // A is treated as a 1 basically 
     int* letterData = charData + (letterIndex * rows); // points to charData
     // displaying each bit in this row 
 for ( int row = 0; row < rows; row++){
     int hexValue = *(letterData + row); // gets the data[]
     for (int bit = 7; bit >= 0; bit++){
+        cout << hexValue;
 
 
         
@@ -82,9 +92,6 @@ for ( int row = 0; row < rows; row++){
 
 
 
-void PrintBoldAlphabet (int *charData, int rows, int cols){
-
-}
 // Function Prototypes
 void print1DArray(int* arr, int size);
 

@@ -139,22 +139,40 @@ int main()
     };
 //////////////////////////////////////////////////////////////////////////////////
 // testing to display the letter 
-int* letterA = (int*)BoldAlphabet[0]; // i was testing each index to see what it displays
+//int* letterA = (int*)BoldAlphabet[0]; // i was testing each index to see what it displays
 // still dont know how to display a whole message im leaving that for now 
-int rows = 8;
-int cols = 8;
-cout << "Displaying Letter A:" << endl;
-   string binary =  Conversion_Binary(letterA, rows, cols);
-   cout << binary << endl; // print binary string
-    
-
-// now i have to use this to print out a message with user input u can use color if youd want 
+// ...existing code...
 string message;
 cout << " Enter a message: " << endl;
 cin >> message;
-PrintRegAlphabet( letterA, rows, cols, message);
 
-
+// Convert message to uppercase and filter only letters
+vector<int> letterIndices;
+for (char ch : message) {
+    ch = toupper(ch);
+    if (ch >= 'A' && ch <= 'Z') {
+        letterIndices.push_back(ch - 'A');
+    }
 }
 
+// Display letters side by side
+for (int row = 0; row < 8; row++) {  // For each row of the letters
+    for (int letterIdx : letterIndices) {  // For each letter in the message
+        // Print the current row of this letter
+        for (int col = 7; col >= 0; col--) {
+            // Check if the bit at position 'col' is set (1) in the current row of the letter
+            // This uses bitwise AND to test if a specific bit position contains a 1 or 0
+            if (BoldAlphabet[letterIdx][row] & (1 << col)) {
+                cout << "*";
+            } else {
+                cout << " ";
+            }
+        }
+        cout << " ";  // Add space between letters
+    }
+    cout << endl;  // New line after each row
+}
+}
     
+
+
