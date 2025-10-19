@@ -31,7 +31,7 @@ int main()
 //////////////////////////////////////////////////////////////////////////////////
     const int Reg_AlphData[rows_reg][columns_reg]= {
     // Letter A
-    { 0x08, 0x14, 0x24, 0x3E, 0x24 },
+    { 0x08, 0x14, 0x22, 0x3E, 0x22 },
     // Letter B
     { 0x38, 0x24, 0x3C, 0x24, 0x38 },
     // Letter C
@@ -79,7 +79,7 @@ int main()
     // Letter X
     { 0x22, 0x08, 0x10, 0x20, 0x22 },
     // Letter Y 
-    { 0x22, 0x14, 0x08, 0x10, 0x08 },
+    { 0x22, 0x14, 0x08, 0x08, 0x08 },
     // Letter Z
     { 0x3E, 0x04, 0x08, 0x10, 0x3E }
     };
@@ -139,20 +139,20 @@ int main()
     };
 //////////////////////////////////////////////////////////////////////////////////
 // testing to display the letter 
-int* letterA = (int*)Reg_AlphData[3]; // i was testing each index to see what it displays
+int* letterA = (int*)BoldAlphabet[0]; // i was testing each index to see what it displays
 // still dont know how to display a whole message im leaving that for now 
-int rows = 7;
+int rows = 8;
 int cols = 8;
 cout << "Displaying Letter A:" << endl;
    string binary =  Conversion_Binary(letterA, rows, cols);
    cout << binary << endl; // print binary string
     
-return 0;
+
 // now i have to use this to print out a message with user input u can use color if youd want 
 string message;
 cout << " Enter a message: " << endl;
 cin >> message;
-
+PrintRegAlphabet( letterA, rows, cols, message);
 
 
 }

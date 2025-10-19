@@ -58,22 +58,31 @@ for ( int row = 0; row < rows; row++){
   }
   return  binaryString;
 }
-// this function will divide the strings by rows and columns 
-void RegAlphabet (int *charData, int rows, int cols ) {
+void PrintRegAlphabet (int *charData, int rows, int cols, string& message ) {
+// i want it to read the users input message and display it using our letters in regular 
+// when user inputs a message it will first loop through the characters through the message 
+for (char ch: message){
+    ch = toupper(ch); // turns all letters to uppercase since that is what were using 
+    if (ch >= 'A' && ch <= 'Z') {
+        cout << "Letter " << ch << " : " << endl;
+    
+    // always have to have an index
+    int letterIndex = ch - 'A';
+    int* letterData = charData + (letterIndex * rows); // points to charData
+    // displaying each bit in this row 
+for ( int row = 0; row < rows; row++){
+    int hexValue = *(letterData + row); // gets the data[]
+    for (int bit = 7; bit >= 0; bit++){
 
-    for (int row = 0; row < rows; row++){
-        int hexValue = *(charData + row);
-        for ( int bit = cols - 1; bit >= 0; bit--){
 
-        }
-
-    }
+        
+    }}}}}
 
 
 
-}
 
-void BoldAlphabet (int *charData, int rows, int cols){
+
+void PrintBoldAlphabet (int *charData, int rows, int cols){
 
 }
 // Function Prototypes
