@@ -15,6 +15,7 @@
 #include <bitset>
 using namespace std;
 
+
 void PrintRegAlphabet (int *charData, int rows, int col, string& message ) {
 // i want it to read the users input message and display it using our letters in regular 
 // when user inputs a message it will first loop through the characters through the message 
@@ -25,7 +26,7 @@ void PrintRegAlphabet (int *charData, int rows, int col, string& message ) {
             letters.push_back(ch);
         }
     }
-    for (int row = 0; row < 5; row++) { // For each row of the letters
+    for (int row = 0; row < 7; row++) { // For each row of the letters
         for (char ch : letters){
             if (ch == ' '){
                 cout << "  ";
@@ -37,7 +38,7 @@ void PrintRegAlphabet (int *charData, int rows, int col, string& message ) {
 
             for (int bit = 5; bit >= 0; bit--){
                 if (hexValue & (1 << bit)){
-                    cout << "\033[38;2;255;105;180m*\033[0m";
+                    cout << "\033[48;2;255;105;180m*\033[0m";
                 }
                 else{
                     cout << " ";
@@ -73,7 +74,7 @@ void PrintBoldAlphabet (int *charData, int rows, int col, string& message ){
 
             for (int bit = 7; bit >= 0; bit--){
                 if (hexValue & (1 << bit)){
-                    cout << "\033[38;2;255;105;180m*\033[0m";
+                    cout << "\033[48;2;255;105;180m*\033[0m";
                 }
                 else{
                     cout << " ";
@@ -84,4 +85,6 @@ void PrintBoldAlphabet (int *charData, int rows, int col, string& message ){
         cout << endl;
     }
 }
+
+
 

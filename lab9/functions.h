@@ -23,7 +23,27 @@ void printArray(int* arr, int size){
     cout << endl;
     }
 
+<<<<<<< HEAD
 
 
 
+=======
+/*
+* This function returns an integer in the range [lower, upper]
+* 
+* @param lower // lower bound
+* @param upper // upper bound
+* @return an integer in [lower , upper]
+* @authors Ana Jolynn Arante, Suphia Sidiqi
+* @version 1.0.0
+*
+*/
+void printBinaryAlphabet(ostream &out, const vector<vector<string>> &arr) {
+    for (size_t i = 0; i < arr.size(); ++i) {
+        out << "Letter " << static_cast<char>('A' + i) << ":\n";
+        for (const auto &row : arr[i]) out << row << '\n';
+        out << '\n';
+    }
+}
+>>>>>>> 503154af0145d56e1626302bc17d313365803752
 
