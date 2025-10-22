@@ -21,12 +21,31 @@
 #include <string>
 #include <cstring>
 #include <cctype>
-#include "lab10_functions_suphia.h"
+
 using namespace std;
 
-int main() {
-    string filename;
-    int text;
-    TexttoText_File(filename, text);
+
+
+// i want to first get a line of input 
+int TexttoText_File (string& filename, int& text ) {
+std::ofstream out;
+// prompt the user to enter the filename and open the file.
+cout << " Enter score file name: ";
+cin >> filename;
+
+ifstream input(filename);
+out.open("labScore.txt"); 
+string line;
+
+// Checks if file is opened and proceeds to go into a while loop, if failed it will display the error.
+if( !input ) {             
+        cout << " ERROR: could not read file." << endl;    
+        return 1;
+    }
+    while ((getline ( input, line))) {
+        out << line << endl;
+    }
+    input.close();       // close all files
+    out.close(); 
     return 0;
 }
