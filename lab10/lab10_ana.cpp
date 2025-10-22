@@ -34,11 +34,19 @@ int main(){
     // Display Main Menu
     displayMainMenu();
     cout << "Enter choice: " << endl;
-        // cin.get has overloads for reading a single character or a char buffer, but not a std::string.
-        // Use getline to read a full line into a std::string.
-        getline(cin, choice);
-    // Placeholder: handle the user's menu choice here.
-    // e.g. if (choice == "1") { ... } else if (choice == "Q") { ... }
-*** End Patch
+    getline(cin, choice);
+
+    
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
