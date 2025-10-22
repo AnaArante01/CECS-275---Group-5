@@ -25,8 +25,15 @@
 using namespace std;
 
 int main() {
-    string filename;
-    int text;
-    TexttoText_File(filename, text);
+
+string filename;
+
+cout << " Enter score file name: ";
+cin >> filename;
+
+ifstream input(filename);
+ofstream out("output_suphia.txt"); 
+  //  int text;
+    TexttoText_File(filename, input, out);
     return 0;
 }

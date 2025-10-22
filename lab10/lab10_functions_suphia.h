@@ -27,21 +27,15 @@ using namespace std;
 
 
 // i want to first get a line of input 
-int TexttoText_File (string& filename, int& text ) {
-std::ofstream out;
+int TexttoText_File (string& filename, ifstream& input, ofstream& out ) {
 // prompt the user to enter the filename and open the file.
-cout << " Enter score file name: ";
-cin >> filename;
-
-ifstream input(filename);
-out.open("labScore.txt"); 
-string line;
 
 // Checks if file is opened and proceeds to go into a while loop, if failed it will display the error.
 if( !input ) {             
         cout << " ERROR: could not read file." << endl;    
         return 1;
     }
+    string line;
     while ((getline ( input, line))) {
         out << line << endl;
     }

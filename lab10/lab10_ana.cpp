@@ -25,18 +25,62 @@
 using namespace std;
 
 #include "functions_ana.h"
+#include "helpers_ana.h"
+
+// Function Prototypes from functions_ana.h
+
+
+// Function Prototypes from helpers_ana.h
+void print2DArray(char** arr, int rows);
 
 int main(){
 
     // Define variables
-    string choice;
+    int choice;
 
     // Display Main Menu
     displayMainMenu();
-    cout << "Enter choice: " << endl;
-    getline(cin, choice);
+    cout << "Enter choice: ";
+    cin >> choice;
 
-    
+    switch(choice)
+    {
+        case 1: // User chooses to create a text file to capitaliza the first character of each sentence and all individual i's
+        {
+
+
+
+        }
+        case 2: // User chooses to input a text file to output to us_states_population_formatted.txt
+        {
+            // Define variable for the name of the text file
+            string textFile;
+            int rows = 51;   // 50 states
+            int cols = 1;    // get each line
+
+            cout << "Enter the name of the text file: " << endl;
+            cin >> textFile;
+            ifstream in(textFile);
+
+            char** states = getAllStates(in, rows);
+            print2DArray(states, 51);
+
+            // Free up memory
+            for (int i = 0; i < 51; i++){
+                delete[] states[i];
+            }
+            delete[] states;
+
+
+
+
+
+
+        }
+
+
+
+    }
 
 
 
