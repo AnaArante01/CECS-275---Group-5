@@ -76,9 +76,6 @@ int main(){
             delete[] states;
 
         }
-
-
-
     }
 
     return 0;

@@ -74,22 +74,11 @@ int main(){
                 delete[] states[i];
             }
             delete[] states;
-
+            
+            break;
         }
-
-
-
+        default: cout << "Invalid choice" << endl;
     }
-
-
-
-
-
-
-
-
-
-
 
     return 0;
 }

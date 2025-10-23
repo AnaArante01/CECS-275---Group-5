@@ -82,9 +82,9 @@ void statesPopulation(char** &arrStates, int numStates)
     for (int i = 0; i < numStates; ++i) {
 
         char* line = arrStates[i];
-        const int stateSize = 64;   // Number of bytes reserved for 
-        const int abbrevSize = 8;
-        const int popSize = 32;
+        const int stateSize = 64;   // Number of bytes reserved for state name
+        const int abbrevSize = 8;   // Number of bytes reserved for abbreviation
+        const int popSize = 32;     // Number of bytes reserved for population size
 
         char state[stateSize] = {};
         char abbrev[abbrevSize] = {};
@@ -94,7 +94,7 @@ void statesPopulation(char** &arrStates, int numStates)
         int writePos = 0;
 
         // Get state name
-        while (line[position] != '\0' && line[position] != ',' && writePos < stateSize - 1) {
+        while (line[position] != ',' && writePos < stateSize - 1) {
             state[writePos++] = line[position++];
         }
         state[writePos] = '\0';
@@ -104,7 +104,7 @@ void statesPopulation(char** &arrStates, int numStates)
 
         // Get abbreviation
         writePos = 0;
-        while (line[position] != '\0' && line[position] != ',' && writePos < abbrevSize - 1) {
+        while (line[position] != ',' && writePos < abbrevSize - 1) {
             abbrev[writePos++] = line[position++];
         }
         abbrev[writePos] = '\0';
@@ -112,7 +112,7 @@ void statesPopulation(char** &arrStates, int numStates)
 
         // Get population
         writePos = 0;
-        while (line[position] != '\0' && writePos < popSize - 1) {
+        while (writePos < popSize - 1) {
             pop[writePos++] = line[position++];
         }
         pop[writePos] = '\0';
@@ -124,7 +124,7 @@ void statesPopulation(char** &arrStates, int numStates)
         int len = strlen(tempPop);
         
         // Work from right to left, copying digits and adding commas
-        int readPos = len - 1;    // Position in original number
+        int readPos = len - 1;     // Position in original number
         int writeP = popSize - 2;  // Position in formatted number (leave room for null)
         int digitCount = 0;
         
