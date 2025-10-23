@@ -26,6 +26,7 @@ using namespace std;
 
 #include "functions_ana.h"
 #include "helpers_ana.h"
+#include "lab10_functions_suphia.h"
 
 // Function Prototypes from functions_ana.h
 void displayMainMenu();
@@ -49,9 +50,21 @@ int main(){
         case 1: // User chooses to create a text file to capitaliza the first character of each sentence and all individual i's
         {
 
+                            
+                string filename;
+                string text;
 
+                cout << " Enter score file name: ";
+                cin >> filename;
 
+                ifstream input(filename);
+                ofstream out("output_suphia.txt"); 
+                TexttoText_File(filename, input, out);
+                CapitalizedLetters(text, out);
+                    return 0;
         }
+
+        
         case 2: // User chooses to input a text file to output to us_states_population_formatted.txt
         {
             // Define variable for the name of the text file
@@ -76,6 +89,10 @@ int main(){
             delete[] states;
 
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b23f8c565f63e28230d46dddad720991d251784c
     }
 
     return 0;

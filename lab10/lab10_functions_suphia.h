@@ -77,7 +77,7 @@ if( !input ) {
         // process each line 
         string processedLine = CapitalizedLetters(line, out);
         out << processedLine << endl;
-        cout << "Processed: " << processedLine << endl;
+        cout << "Outputted to output file: " << processedLine << endl;
 
     }
     input.close();       // close all files
