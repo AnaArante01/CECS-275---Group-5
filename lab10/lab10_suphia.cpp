@@ -27,6 +27,7 @@ using namespace std;
 int main() {
 
 string filename;
+string text;
 
 cout << " Enter score file name: ";
 cin >> filename;
@@ -35,5 +36,6 @@ ifstream input(filename);
 ofstream out("output_suphia.txt"); 
   //  int text;
     TexttoText_File(filename, input, out);
+    CapitalizedLetters(text, out);
     return 0;
 }
