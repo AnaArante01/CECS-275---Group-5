@@ -48,9 +48,7 @@ int main(){
     switch(choice)
     {
         case 1: // User chooses to create a text file to capitaliza the first character of each sentence and all individual i's
-        {
-
-                            
+        {              
                 string filename;
                 string text;
 
@@ -63,8 +61,6 @@ int main(){
                 CapitalizedLetters(text, out);
                     return 0;
         }
-
-        
         case 2: // User chooses to input a text file to output to us_states_population_formatted.txt
         {
             // Define variable for the name of the text file
@@ -89,10 +85,7 @@ int main(){
             delete[] states;
 
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> b23f8c565f63e28230d46dddad720991d251784c
+        default: cout << "Invalid choice" << endl;
     }
 
     return 0;
