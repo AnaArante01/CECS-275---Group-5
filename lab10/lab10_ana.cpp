@@ -28,7 +28,8 @@ using namespace std;
 #include "helpers_ana.h"
 
 // Function Prototypes from functions_ana.h
-
+void displayMainMenu();
+void statesPopulation(char** &arrStates, int numStates);
 
 // Function Prototypes from helpers_ana.h
 void print2DArray(char** arr, int rows);
@@ -56,25 +57,23 @@ int main(){
             // Define variable for the name of the text file
             string textFile;
             int rows = 51;   // 50 states
-            int cols = 1;    // get each line
 
-            cout << "Enter the name of the text file: " << endl;
+            // Prompt user to enter the name of the input file
+            cout << "Enter the name of the text file: ";
             cin >> textFile;
             ifstream in(textFile);
 
+            // Define 2D array of all the states, abbreviations, and populations
             char** states = getAllStates(in, rows);
-            print2DArray(states, 51);
+
+            // Function to format the state names, abbreviations, and populations with commas
+            statesPopulation(states, rows);
 
             // Free up memory
             for (int i = 0; i < 51; i++){
                 delete[] states[i];
             }
             delete[] states;
-
-
-
-
-
 
         }
 
