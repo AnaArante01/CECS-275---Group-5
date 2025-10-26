@@ -52,14 +52,14 @@ int main(){
                 string filename;
                 string text;
 
-                cout << " Enter score file name: ";
+                cout << " Enter file name: ";
                 cin >> filename;
 
                 ifstream input(filename);
                 ofstream out("output_suphia.txt"); 
                 TexttoText_File(filename, input, out);
                 CapitalizedLetters(text, out);
-                    return 0;
+                  
         }
         case 2: // User chooses to input a text file to output to us_states_population_formatted.txt
         {
