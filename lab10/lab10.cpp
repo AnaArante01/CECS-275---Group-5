@@ -59,7 +59,11 @@ int main(){
                 ofstream out("output_suphia.txt"); 
                 TexttoText_File(filename, input, out);
                 CapitalizedLetters(text, out);
+<<<<<<< HEAD
                   
+=======
+                break;
+>>>>>>> b4eee58f266ada07bd8e934259d7b596d074170e
         }
         case 2: // User chooses to input a text file to output to us_states_population_formatted.txt
         {
@@ -83,9 +87,10 @@ int main(){
                 delete[] states[i];
             }
             delete[] states;
-
+            break;
         }
         default: cout << "Invalid choice" << endl;
+        break;
     }
 
     return 0;
