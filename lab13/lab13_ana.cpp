@@ -20,107 +20,6 @@
 
 using namespace std;
 
-//*******************************************************
-// setMonth sets the value of the member variable month*
-//*******************************************************
-void Date::setMonth(int m)
-{
-    month = m;
-}
-
-//**************************************************
-// setDay sets the value of the member variable day*
-//**************************************************
-void Date::setDay(int d)
-{
-    day = d;
-}
-
-//****************************************************
-// setYear sets the value of the member variable year*
-//****************************************************
-void Date::setYear(int y)
-{
-    year = y;
-}
-
-//**********************************************
-// getYear returns the value in the year member*
-//**********************************************
-void Date::setMonthName()
-{
-    string mName;
-    if (month == 1){
-        mName = "January";
-    }
-    else if (month == 2){
-        mName = "February";
-    }
-    else if (month == 3){
-        mName = "March";
-    }
-    else if (month == 4){
-        mName = "April";
-    }
-    else if (month == 5){
-        mName = "May";
-    }
-    else if (month == 6){
-        mName = "June";
-    }
-    else if (month == 7){
-        mName = "July";
-    }
-    else if (month == 8){
-        mName = "August";
-    }
-    else if (month == 9){
-        mName = "September";
-    }
-    else if (month == 10){
-        mName = "October";
-    }
-    else if (month == 11){
-        mName = "November";
-    }
-    else if (month == 12){
-        mName = "December";
-    }
-    monthName = mName;
-}
-
-//************************************************
-// getMonth returns the value in the month member*
-//************************************************
-int Date::getMonth() const
-{
-    return month;
-}
-
-//********************************************
-// getDay returns the value in the day member*
-//********************************************
-int Date::getDay() const
-{
-    return day;
-}
-
-//**********************************************
-// getYear returns the value in the year member*
-//**********************************************
-int Date::getYear() const
-{
-    return year;
-}
-
-//************************************************
-// getMonth returns the value in the month member*
-//************************************************
-string Date::getMonthName() const
-{
-    return monthName;
-}
-
 //****************************************************
 // Function main                                     *
 //****************************************************
@@ -145,18 +44,7 @@ int main()
     today.setMonth(month);
     today.setDay(day);
     today.setYear(year);
-    today.setMonthName();
-
-    // DISPLAY THE FIRST DATE IN THE THREE FORMATS
-    // Display the month, day, and year in the first format: 8/25/2025
-    cout << "--------------------------------------------------------" << endl;
-    cout << "Here is the date in the first format: " << setw(2) << setfill('0') << today.getMonth() << "/" << setw(2) << setfill('0') << today.getDay() << "/" << today.getYear() << endl;
-    // Display the month, day, and year in the second format: August 25, 2025
-    cout << "Here is the date in the second format: " << today.getMonthName() << " " << setw(2) << setfill('0') << today.getDay() << ", " << today.getYear() << endl;
-    // Display the month, day, and year in the third format: 25 August 2025
-    cout << "Here is the date in the third format: " << setw(2) << setfill('0') << today.getDay() << " " << today.getMonthName() << " " << today.getYear() << endl;
-    cout << "--------------------------------------------------------" << endl;
-
+    cout << endl;
     // Prompts user to enter a second date
     cout << endl << "Enter another date: " << endl;
     cout << "Enter month (1-12): ";
@@ -169,17 +57,7 @@ int main()
     future.setMonth(fMonth);
     future.setDay(fDay);
     future.setYear(fYear);
-    future.setMonthName();
-
-    // DISPLAY THE SECOND DATE IN THE THREE FORMATS
-    // Display the month, day, and year in the first format: 8/25/2025
-    cout << "--------------------------------------------------------" << endl;
-    cout << "Here is the date in the first format: " << setw(2) << setfill('0') << future.getMonth() << "/" << setw(2) << setfill('0') << future.getDay() << "/" << future.getYear() << endl;
-    // Display the month, day, and year in the second format: August 25, 2025
-    cout << "Here is the date in the second format: " << future.getMonthName() << " " << setw(2) << setfill('0') << future.getDay() << ", " << future.getYear() << endl;
-    // Display the month, day, and year in the third format: 25 August 2025
-    cout << "Here is the date in the third format: " << setw(2) << setfill('0') << future.getDay() << " " << future.getMonthName() << " " << future.getYear() << endl;
-    cout << "--------------------------------------------------------" << endl;
+    cout << endl;
 
     int choice;
     displayMenu();  // Display menu
@@ -195,14 +73,20 @@ int main()
             cout << "Enter a year: ";
             cin >> year;
 
-            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            // Call the leap-year logic directly because Date::isLeap is a non-static member
+            //bool leap = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+            bool leap = Date::isLeap(year);
+
+            if (leap)
                 cout << year << " is a leap year." << endl;
             else
                 cout << year << " is not a leap year." << endl;
+
         }
             break;
         case 2: // Calculate the number of days between two dates
         {
+                /*
                 Date date1, date2;
                 // Get input for the first date
                 int month, day, year;
@@ -224,6 +108,7 @@ int main()
                 // Calculate the number of days between the two dates
                 int daysBetween = abs((date2.getYear() - date1.getYear()) * 365 + (date2.getMonth() - date1.getMonth()) * 30 + (date2.getDay() - date1.getDay()));
                 cout << "The number of days between " << date1.getMonthName() << " " << date1.getDay() << ", " << date1.getYear() << " and " << date2.getMonthName() << " " << date2.getDay() << ", " << date2.getYear() << " is " << daysBetween << " days." << endl;
+                */
         }
             break;
         case 3: // Increase a date by one
@@ -236,6 +121,7 @@ int main()
             break;
         case 5: // Compare two dates
             {
+                /*
                 Date date1, date2;
                 // Get input for the first date
                 int month, day, year;
@@ -259,6 +145,7 @@ int main()
                     cout << "The two dates are the same." << endl;
                 else
                     cout << "The two dates are different." << endl;
+                */
             }
             break;
         default:

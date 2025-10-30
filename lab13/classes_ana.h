@@ -23,12 +23,8 @@ class Date
     private:
         int month{0}, day{0}, year{0}; // Default constructor sets all values to 0
 
-        static bool isLeap(int y);
         static int daysInMonth(int m, int y);
         static bool isValidDate(int m, int d, int y);
-
-        long long toSerial() const;
-        static Data fromSerial(long long s);
 
     public:
         // Default constructor
@@ -41,10 +37,10 @@ class Date
         void setYear(int y);
 
         // Getters
-        int getMonth() const { return month; }
-        int getDay() const { return day; }
-        int getYear() const { return year; }
-        
+        int getMonth() const;
+        int getDay() const;
+        int getYear() const;
+
         // Formatting Functions
         string monthName() const;
         string format_MDY() const;
@@ -52,8 +48,8 @@ class Date
         string format_DMNY() const;
 
         // Required
-        bool isLeapYear() const;
-        //bool daysBetween( const Data& other) const;
+        static bool isLeap(int y);
+        //bool daysBetween( const Date& other) const;
         void increment();
         void decrement();
         //int compare(const Date& other) const;
