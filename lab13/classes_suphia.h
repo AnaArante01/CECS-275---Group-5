@@ -31,6 +31,8 @@ class Date
     void setDay(int d);
     void setYear(int y);
      
+      void increment();
+        void decrement();
 
 
 };
