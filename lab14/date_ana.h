@@ -48,10 +48,12 @@ class Date {
       //Date(const Date &other)
       //    {month = other.month; day = other.day; year = other.year;}
 
-      /*
-         Overloaded operator= that allows assignment of one Date object to another.
-      */
-      //Date& operator=(const Date &other);
+      
+
+      // Overloaded Operators
+
+      Date& operator++(); // Prefix increment
+      Date& operator--(); // Prefix decrement
 
       const Date operator+ (int i) const;
       const Date operator+ (const Date& otherDate) const;

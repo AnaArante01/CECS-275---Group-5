@@ -100,7 +100,7 @@ int main()
             date.setYear(year);
 
             // Increase the date by one day using overloaded + operator
-            date = date + 1;
+            ++date;
 
             cout << "The new date is: " << date.getMonthName() << " " << date.getDay() << ", " << date.getYear() << endl;
 
@@ -121,7 +121,7 @@ int main()
             date.setYear(year);
 
             // Decrease the date by one day using overloaded - operator
-            date = date - 1;
+            --date;
 
             cout << "The new date is: " << date.getMonthName() << " " << date.getDay() << ", " << date.getYear() << endl;
 
@@ -158,6 +158,7 @@ int main()
         } // End of case 6
         case 7: // User chooses to calculate the date in the future
         {
+            // Create Date object: date
             Date date;
 
             // Prompt user to enter a date
@@ -183,6 +184,28 @@ int main()
         } // End of case 7
         case 8: // User chooses to calculate the date in the past
         {
+            // Create Date object: date
+            Date date;
+
+            // Prompt user to enter a date
+            cout << "The date you will enter will be receded by a number of days." << endl;
+            int month, day, year;
+            cout << "Enter a date in the format MM DD YYYY: ";
+            cin >> month >> day >> year;
+            date.setMonth(month);
+            date.setDay(day);
+            date.setYear(year);
+
+            // Prompt user to enter a number of days to recede
+            int subtractDays;
+            cout << "Enter the number of days to subtract by: ";
+            cin >> subtractDays;
+
+            // Subtract the inputted number of days by using overloaded - operator
+            date = date - subtractDays;
+
+            cout << "The new date is: " << date.getMonthName() << " " << date.getDay() << ", " << date.getYear() << endl;
+            
             break;
         } // End of case 8
         case 9: // User chooses to exit program

@@ -104,6 +104,18 @@ Date::Date(const int& m, const int& d, const int& y)
     year = y;
 }
 
+Date& Date::operator++() // Prefix increment
+{
+    this->day++;
+    return *this;
+}
+
+Date& Date::operator--() // Prefix decrement
+{
+    this->day--;
+    return *this;
+}
+
 const Date Date::operator+ (int i) const
 {
     Date result = *this;
