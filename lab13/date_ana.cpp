@@ -13,11 +13,12 @@
 // Header file for Date class
 #include "classes_ana.h"
 
+
 using namespace std;
 
-static bool Date::isLeap(int y)
+bool Date::isLeap(int y)
 {
-    return (y % 4 ==0 && y % 100 !=0) || (y % 400 ==0);
+    return (y % 4 ==0 && y % 100 !=0) || (y % 400 == 0);
 }
 
 int Date::daysInMonth(int m, int y)
@@ -25,7 +26,8 @@ int Date::daysInMonth(int m, int y)
     static const int base[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if (m == 2)
     {
-        return base[1] + (Date::isLeap(y) ? 1 : 0);
+        bool leap = ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0));
+        return base[1] + (leap ? 1 : 0);
     }
     if (m >= 0 && m <= 12)
     {
@@ -134,6 +136,13 @@ string Date::monthName() const
     else {
         return "Invalid Input";
     }
+}
+
+Date::Date(int m, int d, int y)
+{
+    setMonth(m);
+    setDay(d);
+    setYear(y);
 }
 
 string Date::format_MDY() const

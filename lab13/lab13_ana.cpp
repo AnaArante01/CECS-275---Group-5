@@ -20,6 +20,8 @@
 
 using namespace std;
 
+
+
 //****************************************************
 // Function main                                     *
 //****************************************************
@@ -40,11 +42,6 @@ int main()
     cin >> year;
     cout << endl;
 
-    // Store the month, day, and year in the today object
-    today.setMonth(month);
-    today.setDay(day);
-    today.setYear(year);
-    cout << endl;
     // Prompts user to enter a second date
     cout << endl << "Enter another date: " << endl;
     cout << "Enter month (1-12): ";
@@ -53,11 +50,6 @@ int main()
     cin >> fDay;
     cout << "Enter year (e.g., 2025): ";
     cin >> fYear;
-
-    future.setMonth(fMonth);
-    future.setDay(fDay);
-    future.setYear(fYear);
-    cout << endl;
 
     int choice;
     displayMenu();  // Display menu
@@ -69,19 +61,17 @@ int main()
     {
         case 1: // Check if a year is a leap year
         {
-            int year;
+            int inYear;
             cout << "Enter a year: ";
-            cin >> year;
+            cin >> inYear;
 
-            // Call the leap-year logic directly because Date::isLeap is a non-static member
-            //bool leap = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
-            bool leap = Date::isLeap(year);
+            // Use the class helper to check for leap year
+            bool leap = Date::isLeap(inYear);
 
             if (leap)
-                cout << year << " is a leap year." << endl;
+                cout << inYear << " is a leap year." << endl;
             else
-                cout << year << " is not a leap year." << endl;
-
+                cout << inYear << " is not a leap year." << endl;
         }
             break;
         case 2: // Calculate the number of days between two dates
@@ -113,7 +103,7 @@ int main()
             break;
         case 3: // Increase a date by one
             {
-                Date date;
+                //Date date;
             }
             break;
         case 4: // Decrease a date by one
@@ -121,7 +111,6 @@ int main()
             break;
         case 5: // Compare two dates
             {
-                /*
                 Date date1, date2;
                 // Get input for the first date
                 int month, day, year;
@@ -145,7 +134,6 @@ int main()
                     cout << "The two dates are the same." << endl;
                 else
                     cout << "The two dates are different." << endl;
-                */
             }
             break;
         default:

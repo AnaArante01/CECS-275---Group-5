@@ -14,9 +14,6 @@
 
 using namespace std;
 
-// Function Prototypes
-void displayMenu();
-
 // Date class declaration
 class Date
 {
@@ -57,5 +54,20 @@ class Date
 
 // Function Prototypes
 void displayMenu();
+
+//--------------------------------------------------
+// displayMenu prints the available menu options
+//--------------------------------------------------
+void displayMenu()
+{
+    cout << "-------------------- MENU ---------------------\n";
+    cout << "1. Check if a year is a leap year\n";
+    cout << "2. Calculate days between two dates\n";
+    cout << "3. Increase a date by one day\n";
+    cout << "4. Decrease a date by one day\n";
+    cout << "5. Compare two dates\n";
+    cout << "-----------------------------------------------\n";
+}
+
 
 #endif // CLASSES_ANA_H
