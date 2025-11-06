@@ -46,12 +46,11 @@ class Date {
          Copy constructor that creates a new Date object as a copy of an existing Date object.
       */
       //Date(const Date &other)
-      //    {month = other.month; day = other.day; year = other.year;}
+      //   {month = other.month; day = other.day; year = other.year;}
 
-      
-
-      // Overloaded Operators
-
+      /*
+         Overloaded Operators
+      */
       Date& operator++(); // Prefix increment
       Date& operator--(); // Prefix decrement
 
@@ -62,6 +61,7 @@ class Date {
       
       bool operator==(const Date& otherDate) const;
       bool operator!=(const Date& otherDate) const;
+      static bool isLeap(int y);
 
       // Private Data Fields
       // Non-member function for operator overloading
