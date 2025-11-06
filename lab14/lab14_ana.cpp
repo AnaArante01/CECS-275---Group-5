@@ -237,8 +237,6 @@ int main()
             {
                 date.setDay(day - 1);
             }
-            // Decrease the date by one day using overloaded - operator
-            --date;
 
             cout << "The new date is: " << date.getMonthName() << " " << date.getDay() << ", " << date.getYear() << endl;
 
