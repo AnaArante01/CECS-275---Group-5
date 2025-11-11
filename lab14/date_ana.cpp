@@ -28,7 +28,7 @@ static string nameFromMonth(const int& month)
     if (month == 11) return "November";
     if (month == 12) return "December";
     return "Invalid Month Number";
-} 
+}
 
 //*******************************************************
 // setMonth sets the value of the member variable month*
@@ -95,6 +95,23 @@ Date::Date(){
     year = 0;
 }
 
+bool Date::isLeap(int y)
+{
+    if (y % 400 == 0)
+    {
+        return true;
+    }
+    if (y % 100 == 0)
+    {
+        return false;
+    }
+    if (y % 4 == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
 // Overloaded constructor: month number, day, year
 Date::Date(const int& m, const int& d, const int& y)
 {
@@ -102,6 +119,18 @@ Date::Date(const int& m, const int& d, const int& y)
     mName = nameFromMonth(m);   // Convert month number to month name string
     day = d;
     year = y;
+}
+
+Date& Date::operator++() // Prefix increment
+{
+    this->day++;
+    return *this;
+}
+
+Date& Date::operator--() // Prefix decrement
+{
+    this->day--;
+    return *this;
 }
 
 const Date Date::operator+ (int i) const
