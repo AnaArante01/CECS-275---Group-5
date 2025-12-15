@@ -1,0 +1,39 @@
+window {
+    background-color:#fbc6cd;
+}
+
+label {
+    font-family: "Times New Roman";
+    font-size: 14pt;
+    font-weight: bold;
+    color: #fbc6cd;
+}
+
+button {
+    background-color: #671648;
+    background-image: none;
+}
+
+headerbar {
+    background-color: #671648;
+    background-image: none;
+}
+
+decoration {
+    border: 3px solid #8d1768;
+}
+
+entry {
+    background-color: #fbc6cd;
+    background-image: none;
+}
+
+dialog {
+    background-color: #fbc6cd;
+}
+
+.avatar-frame {
+    border: 5px solid #671648;
+    padding: 4px;
+    background-color: transparent;
+}

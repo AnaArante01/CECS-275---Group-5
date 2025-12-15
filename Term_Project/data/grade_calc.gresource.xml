@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/grade/calc">
+    <file>icons/hicolor/24x24/apps/purp_upload_img.png</file>
+  </gresource>
+</gresources>

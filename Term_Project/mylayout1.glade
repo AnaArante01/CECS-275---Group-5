@@ -2,10 +2,527 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="home_win">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed" id="home_fixed">
+        <property name="width-request">1200</property>
+        <property name="height-request">1000</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="home_logo">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">purp_calc_logo.png</property>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStack" id="home_stack">
+            <property name="width-request">980</property>
+            <property name="height-request">980</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkFixed" id="account_home_fxd">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="account_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">User Profile</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 20"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="account_edit_btn">
+                    <property name="label" translatable="yes">Edit Profile</property>
+                    <property name="width-request">150</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">787</property>
+                    <property name="y">50</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="account_change_avatar_btn">
+                    <property name="label" translatable="yes">Edit Profile Picture</property>
+                    <property name="width-request">200</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">76</property>
+                    <property name="y">340</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="avatar_img">
+                    <property name="width-request">200</property>
+                    <property name="height-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">default_profile_icon.png</property>
+                    <style>
+                      <class name="avatar-frame"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="x">82</property>
+                    <property name="y">122</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="account_save_btn">
+                    <property name="label" translatable="yes">Save</property>
+                    <property name="width-request">150</property>
+                    <property name="height-request">50</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">787</property>
+                    <property name="y">840</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="account_name_lbl">
+                    <property name="width-request">350</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">First Name, Last Name</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 18"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">320</property>
+                    <property name="y">122</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="contact_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">60</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Contact Information</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 16"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">320</property>
+                    <property name="y">268</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="account_contact_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">emailaddress@student.com</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 12"/>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">320</property>
+                    <property name="y">326</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="account_name_txt">
+                    <property name="width-request">350</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">342</property>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="account_contact_txt">
+                    <property name="width-request">300</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">342</property>
+                    <property name="y">392</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page0</property>
+                <property name="title" translatable="yes">Account</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="upload_home_fxd">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="upload_lbl">
+                    <property name="width-request">204</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Upload Files</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 20"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="upload_img">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">my icons/upload_icon.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="upload_box">
+                    <property name="width-request">800</property>
+                    <property name="height-request">400</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkFileChooserButton" id="file_button">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="hexpand">True</property>
+                        <property name="title" translatable="yes"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkTextView" id="file_textview">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="wrap-mode">word-char</property>
+                        <property name="monospace">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="x">100</property>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="upload_box_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">60</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Select a File to Upload</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 16"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">104</property>
+                    <property name="y">130</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page1</property>
+                <property name="title" translatable="yes">Upload Files</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="sort_home_fxd">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="sort_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Sorting Options</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 20"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="sort_icon">
+                    <property name="width-request">100</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">my icons/sort_icon.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page2</property>
+                <property name="title" translatable="yes">Sort Options</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="pie_home_fxd">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="pie_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Create a Pie Chart</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 20"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="pie_icon">
+                    <property name="width-request">100</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">my icons/pie_icon.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="pie_drawing_lbl">
+                    <property name="width-request">350</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Pie Chart for Selected File</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 16"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">157</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkDrawingArea" id="pie_chart_area">
+                    <property name="width-request">600</property>
+                    <property name="height-request">600</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">234</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page3</property>
+                <property name="title" translatable="yes">Pie Chart</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="bar_home_fxd">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="bar_lbl">
+                    <property name="width-request">300</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Create a Bar Chart</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 20"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="bar_icon">
+                    <property name="width-request">100</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">my icons/bar_icon.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="bar_drawing_lbl">
+                    <property name="width-request">450</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Bar Chart for Selected Score File</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Serif Bold 16"/>
+                      <attribute name="foreground" value="#676716164848"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">157</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="bar_box">
+                    <property name="width-request">600</property>
+                    <property name="height-request">600</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkComboBoxText" id="student_selector">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkDrawingArea">
+                        <property name="name">bar_chart_area</property>
+                        <property name="width-request">600</property>
+                        <property name="height-request">600</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="x">110</property>
+                    <property name="y">234</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page4</property>
+                <property name="title" translatable="yes">Bar Chart</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">210</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStackSwitcher" id="home_stack_sw">
+            <property name="width-request">200</property>
+            <property name="height-request">780</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="homogeneous">True</property>
+            <property name="stack">home_stack</property>
+            <style>
+              <class name="main_pink_win"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">210</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="login_win">
     <property name="can-focus">False</property>
     <child>
-      <object class="GtkFixed" id="fixed1">
+      <object class="GtkFixed" id="login_fixed">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <child>
@@ -19,11 +536,11 @@
           </object>
           <packing>
             <property name="x">400</property>
-            <property name="y">462</property>
+            <property name="y">500</property>
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="close_btn">
+          <object class="GtkButton" id="login_close_btn">
             <property name="label" translatable="yes">Close</property>
             <property name="width-request">86</property>
             <property name="height-request">44</property>
@@ -56,8 +573,8 @@
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">Enter Password:</property>
             <attributes>
-              <attribute name="font-desc" value="Serif Bold 12"/>
-              <attribute name="foreground" value="#000000000000"/>
+              <attribute name="font-desc" value="Serif Bold 14"/>
+              <attribute name="foreground" value="#676716164848"/>
             </attributes>
           </object>
           <packing>
@@ -85,13 +602,13 @@
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">Don't have an account?</property>
             <attributes>
-              <attribute name="font-desc" value="Serif Bold 12"/>
-              <attribute name="foreground" value="#000000000000"/>
+              <attribute name="font-desc" value="Serif Bold Italic 14"/>
+              <attribute name="foreground" value="#676716164848"/>
             </attributes>
           </object>
           <packing>
-            <property name="x">177</property>
-            <property name="y">462</property>
+            <property name="x">148</property>
+            <property name="y">500</property>
           </packing>
         </child>
         <child>
@@ -102,8 +619,8 @@
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">Enter Username:</property>
             <attributes>
-              <attribute name="font-desc" value="Serif Bold 12"/>
-              <attribute name="foreground" value="#000000000000"/>
+              <attribute name="font-desc" value="Serif Bold 14"/>
+              <attribute name="foreground" value="#676716164848"/>
             </attributes>
           </object>
           <packing>
@@ -112,12 +629,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="logo">
+          <object class="GtkImage" id="login_logo">
             <property name="width-request">100</property>
             <property name="height-request">80</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="pixbuf">grade_calc_logo.png</property>
+            <property name="pixbuf">purp_calc_logo.png</property>
           </object>
           <packing>
             <property name="x">320</property>
@@ -138,6 +655,154 @@
             <property name="y">369</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkLabel" id="auth_lbl">
+            <property name="width-request">300</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Welcome!</property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 12"/>
+              <attribute name="foreground" value="#676716164848"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">253</property>
+            <property name="y">421</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="main_pink_win"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="reg_win">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed" id="fixed_reg">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="reg_logo">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">purp_calc_logo.png</property>
+          </object>
+          <packing>
+            <property name="x">320</property>
+            <property name="y">31</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="new_user_lbl">
+            <property name="width-request">219</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Username: </property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 14"/>
+              <attribute name="foreground" value="#676716164848"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">177</property>
+            <property name="y">232</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="new_user_txt">
+            <property name="width-request">219</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">400</property>
+            <property name="y">232</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="new_pass_lbl">
+            <property name="width-request">219</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Password:</property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 14"/>
+              <attribute name="foreground" value="#676716164848"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">177</property>
+            <property name="y">297</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="new_pass_txt">
+            <property name="width-request">219</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">400</property>
+            <property name="y">297</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="register_btn">
+            <property name="label" translatable="yes">Register</property>
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">356</property>
+            <property name="y">369</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="reg_close_btn">
+            <property name="label" translatable="yes">Close</property>
+            <property name="width-request">86</property>
+            <property name="height-request">44</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">745</property>
+            <property name="y">594</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="success_lbl">
+            <property name="width-request">300</property>
+            <property name="height-request">58</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Welcome!</property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 12"/>
+              <attribute name="foreground" value="#676716164848"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">253</property>
+            <property name="y">421</property>
+          </packing>
+        </child>
+        <style>
+          <class name="main_pink_win"/>
+        </style>
       </object>
     </child>
   </object>
